@@ -1,5 +1,5 @@
 #Inventory Script for windows machines
-#Using WMI cmdlets, advanced CIM cmdlets also available
+#Using CIM cmdlets 
 
 #Getting Computername and Domain info
 $Info1 = Get-CimInstance -ClassName CIM_ComputerSystem
