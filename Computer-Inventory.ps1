@@ -35,3 +35,6 @@ SerialNumber = $Bios.SerialNumber
 
 #final Inventory
 $ComputerDetails
+
+#Export as a specific format or out this to a file to generate reports
+$ComputerDetails | Export-csv -Path "Drive:\path\filename.csv"
