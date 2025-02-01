@@ -5,14 +5,14 @@ try{
 
 #function for logging
 [string]$Date=get-Date -Format MM/dd/yyyy/HH/mm/ss
-[string]$Global:Path="C:\Users\HOME SYPR\Desktop\Test_$Date.log"
+[string]$Global:Path="File_path\Test_$Date.log"
 function write-log {
 	param (
 		[string]$Message,
 	    [string]$path = $Path
 		)
 	
-Write-Output "$(get-date) $Message" | Out-File -FilePath $path -Append
+Write-Output "$(get-date):: $Message" | Out-File -FilePath $path -Append
 
 }
 #Getting Computername and Domain info
@@ -61,7 +61,7 @@ $ComputerDetails
 [string]$Csvdate=get-Date -Format MM/dd/yyyy/HH/mm/ss
 
 $ComputerDetails | 
-Export-csv -Path "C:\users\HOME SYPR\Desktop\Inventory_$Csvdate.csv" -NoTypeInformation -NoClobber 
+Export-csv -Path "File_path\Inventory_$Csvdate.csv" -NoTypeInformation -NoClobber 
 
 write-log -Message "Report generated and saved"
 }
